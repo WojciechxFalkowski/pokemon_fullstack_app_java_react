@@ -23,8 +23,6 @@ services:
         IMAGE_NAME: ${FRONTEND_IMAGE}
     ports:
       - "7010:7010"
-    env_file:
-      - .env
     restart: always
     networks:
       - app-network

@@ -17,7 +17,7 @@ const initialState: TrainersState = {
 
 // Asynchroniczne pobieranie danych trenerów
 export const fetchTrainers = createAsyncThunk('trainers/fetchTrainers', async () => {
-    const response = await axios.get<Trainer[]>('http://localhost:7011/api/trainers');
+    const response = await axios.get<Trainer[]>(`${import.meta.env.VITE_APP_API_URL}/api/trainers`);
     return response.data;
 });
 
