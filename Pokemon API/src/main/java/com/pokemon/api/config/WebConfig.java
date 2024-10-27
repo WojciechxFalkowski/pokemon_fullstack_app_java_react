@@ -13,10 +13,10 @@ public class WebConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/**")  // ścieżka do endpointów
-                        .allowedOrigins("http://localhost:7010")  // adres frontendu
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")  // metody HTTP
-                        .allowedHeaders("*");  // wszystkie nagłówki
+                registry.addMapping("/api/**")
+                        .allowedOrigins("http://localhost:5173", "https://pokemon-app.wojciechfalkowski.pl")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowedHeaders("*");
             }
         };
     }
