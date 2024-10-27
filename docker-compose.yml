@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./Pokemon API
+      dockerfile: Dockerfile
+      args:
+        IMAGE_NAME: ${BACKEND_IMAGE}
+    ports:
+      - "7011:7011"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod  # Aktywacja profilu produkcyjnego
+    restart: always
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./trainer-pokemon-app
+      dockerfile: Dockerfile
+      args:
+        IMAGE_NAME: ${FRONTEND_IMAGE}
+    ports:
+      - "7010:7010"
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
