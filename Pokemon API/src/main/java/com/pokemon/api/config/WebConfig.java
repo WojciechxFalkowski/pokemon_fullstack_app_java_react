@@ -14,7 +14,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:5173", "https://pokemon-app.wojciechfalkowski.pl")
+                        .allowedOrigins("http://localhost:5173", "https://pokemon-app.wojciechfalkowski.pl", "http://raspberrypi.local:7010")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*");
             }
